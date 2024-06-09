@@ -440,6 +440,27 @@ strong {
 #dog-images-container img {
   margin: 10px; /* Adjust margin between images */
 }
+/*---------------------------------------
+Partition        
+-----------------------------------------*/
+hr.soften {
+  width: 60%;
+  height: 1px;
+  background-color: #000; /* Change the color as needed */
+  border: none;
+  margin: 50px 0; /* Adjust margin as needed */
+  animation: softenAnimation 1s ease-in-out infinite alternate; /* Adjust animation duration and timing function as needed */
+}
+
+@keyframes softenAnimation {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 90%; /* Adjust the width of the line at the end of animation */
+  }
+}
 
 /*---------------------------------------
  Cat image gallery            
