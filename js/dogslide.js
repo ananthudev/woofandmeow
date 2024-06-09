@@ -1,12 +1,12 @@
 $(function () {
   var inWrap = $(".inner-wrapper"),
     $slide = $(".slide"),
-    apiUrl = "https://dog.ceo/api/breeds/image/random",
+    apiUrl = "https://api.thedogapi.com/v1/images/search",
     sliderInterval;
 
   function fetchDogImage($img) {
     $.getJSON(apiUrl, function (data) {
-      $img.attr("src", data.message);
+      $img.attr("src", data[0].url);
     });
   }
 
