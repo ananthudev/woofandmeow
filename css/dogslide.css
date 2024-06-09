@@ -70,3 +70,30 @@
   right: 30px;
   transform: rotate(45deg);
 }
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  #dog-image-carousel .slider-wrapper {
+    width: 100%;
+    max-width: 500px;
+    height: 250px;
+  }
+
+  #dog-image-carousel .slide img {
+    border: 3px solid #fff;
+  }
+
+  #dog-image-carousel .button {
+    width: 25px;
+    height: 25px;
+    border-top: 1.5px solid black;
+  }
+
+  #dog-image-carousel .prev {
+    left: 15px;
+  }
+
+  #dog-image-carousel .next {
+    right: 15px;
+  }
+}

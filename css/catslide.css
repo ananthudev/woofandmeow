@@ -70,3 +70,30 @@
   right: 30px;
   transform: rotate(45deg);
 }
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  #cat-image-carousel .cat-slider-wrapper {
+    width: 100%;
+    max-width: 500px;
+    height: 250px;
+  }
+
+  #cat-image-carousel .cat-slide img {
+    border: 3px solid #fff;
+  }
+
+  #cat-image-carousel .cat-button {
+    width: 25px;
+    height: 25px;
+    border-top: 1.5px solid black;
+  }
+
+  #cat-image-carousel .cat-prev {
+    left: 15px;
+  }
+
+  #cat-image-carousel .cat-next {
+    right: 15px;
+  }
+}
