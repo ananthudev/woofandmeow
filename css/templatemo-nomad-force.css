@@ -59,7 +59,7 @@ body {
 
   /* Optional styling to enhance the visual appearance */
   text-align: center; /* Ensures text is centered within the h2 */
-  height: 50vh; /* Makes the h2 take up the full viewport height */
+  /* height: 50vh; Makes the h2 take up the full viewport height */
 }
 
 h2,
@@ -540,7 +540,7 @@ hr.soften {
 
   /* Optional styling to enhance the visual appearance */
   text-align: center; /* Ensures text is centered within the h2 */
-  height: 50vh; /* Makes the h2 take up the full viewport height */
+  height: 26vh; /* Makes the h2 take up the full viewport height */
 }
 
 /*---------------------------------------
@@ -548,7 +548,7 @@ hr.soften {
 -----------------------------------------*/
 .section-padding {
   padding-top: 1rem;
-  padding-bottom: 7rem;
+  padding-bottom: 3rem;
 }
 
 /*---------------------------------------

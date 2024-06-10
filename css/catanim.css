@@ -6,32 +6,33 @@
   box-sizing: border-box;
 }
 
-/* body {
+body {
   padding: 0;
   margin: 0;
-  background-color: #9deaf2;
-} */
+  /* background-color: #9deaf2; */
+}
 
 .outer_wrapper {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  /* ... other styles */
+  width: 100vw; /* Use viewport width to include scrollbar */
+  margin-top: -150px; /* Adjust the margin-top to position it correctly */
+  /* If the horizontal rule has a margin, you might need to adjust it */
 }
 
 .wrapper {
+  position: absolute;
   height: calc(100vh - 100px);
   width: 100%;
   top: 0;
 }
 
-.ground {
+/* .ground {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 150px;
   background-color: #ffffff;
-}
+} */
 
 .cat {
   position: absolute;
@@ -61,7 +62,6 @@
   100% {
     transform: scale(1);
   }
-
   50% {
     transform: scale(0.5, 1);
   }
@@ -76,7 +76,6 @@
   100% {
     transform: scale(1);
   }
-
   50% {
     transform: scale(0.5, 1);
   }
@@ -114,7 +113,6 @@
     left: -5px;
     transform: rotate(0deg) scale(1);
   }
-
   50% {
     left: -10px;
     transform: rotate(-50deg) scale(-1, 1);
@@ -133,7 +131,6 @@
     left: 45px;
     transform: rotate(0deg) scale(1);
   }
-
   50% {
     left: 40px;
     transform: rotate(50deg) scale(-1, 1);
@@ -214,7 +211,6 @@
   100% {
     transform: rotate(-10deg);
   }
-
   50% {
     transform: rotate(10deg);
   }
@@ -225,7 +221,6 @@
   100% {
     transform: rotate(10deg);
   }
-
   50% {
     transform: rotate(-10deg);
   }
@@ -234,7 +229,7 @@
 /* jump */
 .cat_wrapper {
   position: absolute;
-  bottom: 0;
+  bottom: -69px;
 }
 
 .cat_wrapper.jump .one {
@@ -279,7 +274,6 @@
   100% {
     bottom: 0px;
   }
-
   50% {
     bottom: 200px;
   }
@@ -299,7 +293,6 @@
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(-45deg);
   }
@@ -309,7 +302,6 @@
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(45deg);
   }
@@ -321,20 +313,58 @@ svg {
 }
 
 polygon.eyes {
-  fill: #fcfcfc;
+  fill: #76afb5;
 }
 
 polygon,
 path {
-  fill: rgb(9, 9, 9);
+  fill: white;
 }
 
 .header {
-  padding: 15px;
+  padding: 119px 0 0px 0px;
   text-align: center;
   font-family: "Cormorant", serif;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 2px;
   color: dark blue;
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .outer_wrapper {
+    margin-top: 100px;
+  }
+
+  .cat_wrapper {
+    position: absolute;
+    bottom: 79px;
+  }
+  .cat {
+    left: 50px; /* Adjust cat position for smaller screens */
+    bottom: 50px;
+  }
+
+  .header {
+    padding: 80px 0 0px 0px; /* Adjust header padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .cat {
+    height: 25px; /* Scale cat down further */
+    width: 50px;
+    left: 20px;
+    bottom: 40px;
+  }
+
+  .cat_wrapper {
+    position: absolute;
+    bottom: 273 px;
+  }
+
+  .header {
+    font-size: 16px; /* Smaller font size for mobile */
+    padding: 60px 0 0px 0px;
+  }
 }
