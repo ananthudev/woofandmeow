@@ -20,7 +20,6 @@
 }
 
 .wrapper {
-  position: absolute;
   height: calc(100vh - 100px);
   width: 100%;
   top: 0;
@@ -322,12 +321,12 @@ svg {
 }
 
 polygon.eyes {
-  fill: #76afb5;
+  fill: #fcfcfc;
 }
 
 polygon,
 path {
-  fill: white;
+  fill: rgb(9, 9, 9);
 }
 
 .header {
