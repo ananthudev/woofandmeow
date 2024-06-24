@@ -1,0 +1,521 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Woof and Meow</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- <link href="{% static 'css/bootstrap.min.css}" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet"> -->
+
+    <!-- static files -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}">
+
+    <link href="{% static 'css/aos.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/templatemo-nomad-force.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+
+
+    <head>
+
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <!-- dog slide -->
+        <link rel="stylesheet" href="{% static 'css/dogslide.css '%}">
+        <!-- cat slide -->
+        <link rel="stylesheet" href="{% static 'css/catslide.css' %}">
+        <!-- Cat Animation -->
+        <link rel="stylesheet" href="{% static 'css/catanim.css' %}" />
+
+    </head>
+
+    <!--
+
+TemplateMo 567 Nomad Force
+
+https://templatemo.com/tm-567-nomad-force
+
+-->
+</head>
+
+<body>
+
+    <main>
+
+        <section class="hero" id="hero">
+            <div class="heroText">
+                <h1 class="text-white mt-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="800">
+                    Woof and Meow
+                </h1>
+
+                <p class="text-secondary-white-color" data-aos="fade-up" data-aos-delay="1000">
+                    Your Furry Friend Database<strong class="custom-underline"></strong>
+                </p>
+            </div>
+
+            <div class="videoWrapper">
+                <video autoplay="" loop="" muted="" class="custom-video" poster="{% static 'videos/Untitled.png' %}">
+                    <source src="{% static 'videos/videoplayback.mp4' %}" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="overlay"></div>
+        </section>
+
+        <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'index' %}">
+                    <strong>Woof and Meow</strong>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item active">
+                            <!-- <a class="nav-link" href="#hero">Dog Lookup</a> -->
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Dog Lookup</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolio">Cat Lookup</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#dog-image-carousel">Dogs Slideshow</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <span class="navbar-text">Furry Friends Slide Show</span>
+                        </li> -->
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#cat-image-carousel">Cats Slideshow</a>
+                        </li>
+
+                        <!-- <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contact Us</a>
+                            </li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!----------------------------------------- Dogs Section Start ------------------------------>
+        <section class="section-padding pb-0" id="about">
+            <div class="container mb-5 pb-lg-5">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="mb-3" data-aos="fade-up">
+                            Dogs
+                            <img src="{% static 'images\Animation - 1717705042517.gif' %}" alt="Dog GIF"
+                                style="width: 140px; height: 140px; margin-left: 10px;">
+                        </h2>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <select id="dogBreeds" class="form-select" aria-label="Default select example">
+                            <option selected>Select a Breed</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-5 col-md-6 mb-3">
+                        <input type="text" name="query" id="homepage-search-input" class="form-control"
+                            placeholder="Search dogs..."
+                            style="background: hsla(0,0%,100%,.15); border: 2px solid hsla(0,0%,100%,.6); color: #0e0e0e;">
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <button type="submit" id="homepage-search-button" class="btn btn-primary w-100 text-nowrap">
+                            <i class="fa fa-search"></i>
+                            <span class="d-inline d-md-none d-lg-inline">Search</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div id="dogBreedDetails" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" id="dog-pics">
+            <div class="container">
+                <h2 class="mb-4 text-center" data-aos="fade-up">Generate Random Dog Pics</h2>
+
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <div class="card mb-3">
+                            <img id="dog-image" class="card-img-top" alt="Random Dog">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-center">
+                                    <button id="like-btn" class="btn btn-primary me-2" onclick="likeDog()">
+                                        <i class="bi bi-heart-fill"></i> Like
+                                    </button>
+                                    <button id="dislike-btn" class="btn btn-secondary" onclick="showNewDog()">
+                                        <i class="bi bi-x-circle-fill"></i> Dislike
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="liked-dogs-section" class="row d-none">
+                    <div class="container">
+                        <h3 class="mb-3 text-center">Liked Dogs</h3>
+                        <div id="liked-dogs-grid" class="row img-grid"></div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <div class="container">
+                        <button id="show-liked-btn" class="btn btn-outline-primary" onclick="showLikedDogs()">Show
+                            Liked</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Dog image gallery start -->
+        <section class="section-padding" id="dog-image-gallery">
+            <div class="container">
+                <h2 class="mb-4 text-center" data-aos="fade-up">Dog Image Gallery</h2>
+                <div class="row justify-content-center" id="dog-images-container">
+                    <!-- Dog images will be dynamically added here -->
+                </div>
+                <div class="text-center mt-3">
+                    <button id="load-more-btn" class="btn btn-outline-primary" onclick="loadMoreDogImages()">Load
+                        More</button>
+                </div>
+            </div>
+        </section>
+        <!-- Dog image gallery end   -->
+
+        <!-- Dog carousel start -->
+
+        <section class="section-padding" id="dog-image-carousel">
+            <div class="container">
+                <div class="dog-container">
+                    <h2 class="mb-4 text-center" data-aos="fade-up">Dog Image Carousel</h2>
+                    <div class="slider-wrapper">
+                        <div class="inner-wrapper">
+                            <div class="slide"><img src="" alt="Dog 1" /></div>
+                            <div class="slide"><img src="" alt="Dog 2" /></div>
+                            <div class="slide"><img src="" alt="Dog 3" /></div>
+                            <div class="slide"><img src="" alt="Dog 4" /></div>
+                            <div class="slide"><img src="" alt="Dog 5" /></div>
+                            <div class="slide"><img src="" alt="Dog 6" /></div>
+                        </div>
+                    </div>
+                    <div class="button prev"></div>
+                    <div class="button next"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Dog carousel end -->
+
+
+        <!------------------------------- Dogs Section End ---------------------------------------------->
+        <div class="container">
+            <hr class="soften" />
+        </div>
+
+        <!------------------------------ Cats Section Start --------------------------------------->
+
+        <section class="section-padding pb-0" id="portfolio">
+            <div class="container mb-5 pb-lg-5">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="mb-3" data-aos="fade-up">
+                            Cats
+                            <img src="{% static 'images/cat.gif' %}" alt="Cat GIF"
+                                style="width: 180px; height: 160px; margin-left: 2px;">
+                        </h2>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <select id="catBreeds" class="form-select" aria-label="Default select example">
+                            <option selected>Select a Breed</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-5 col-md-6 mb-3">
+                        <input type="text" name="query" id="homepage-search-input-cat" class="form-control"
+                            placeholder="Search cats..."
+                            style="background: hsla(0,0%,100%,.15); border: 2px solid hsla(0,0%,100%,.6); color: #0e0e0e;">
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <button type="submit" id="homepage-search-button-cat" class="btn btn-primary w-100 text-nowrap">
+                            <i class="fa fa-search"></i>
+                            <span class="d-inline d-md-none d-lg-inline">Search</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div id="catBreedDetails" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" id="cat-pics">
+            <div class="container">
+                <h2 class="mb-4 text-center" data-aos="fade-up">Generate Random Cat Pics</h2>
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <div class="card mb-3">
+                            <img id="cat-image" class="card-img-top" alt="Random Cat">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-center">
+                                    <button id="like-cat-btn" class="btn btn-primary me-2" onclick="likeCat()">
+                                        <i class="bi bi-heart-fill"></i> Like
+                                    </button>
+                                    <button id="dislike-cat-btn" class="btn btn-secondary" onclick="showNewCat()">
+                                        <i class="bi bi-x-circle-fill"></i> Dislike
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="liked-cats-section" class="row d-none">
+                    <div class="container"></div>
+                    <h3 class="mb-3 text-center">Liked Cats</h3>
+                    <div id="liked-cats-grid" class="row img-grid"></div>
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="container"></div>
+                <button id="show-liked-cats-btn" class="btn btn-outline-primary" onclick="showLikedCats()">Show
+                    Liked</button>
+            </div>
+        </section>
+
+        <!-- Cat Gallery Start -->
+        <section class="section-padding" id="cat-image-gallery">
+            <div class="container">
+                <h2 class="mb-4 text-center" data-aos="fade-up">Cat Image Gallery</h2>
+                <div class="row justify-content-center" id="cat-images-container">
+                    <!-- Cat images will be dynamically added here -->
+                </div>
+                <div class="text-center mt-3">
+                    <button id="load-more-cat-btn" class="btn btn-outline-primary" onclick="loadMoreCatImages()">Load
+                        More</button>
+                </div>
+            </div>
+        </section>
+
+        <!-------------- Cat Image Carousel Start ---------------->
+
+        <section class="section-padding" id="cat-image-carousel">
+            <div class="container">
+                <h2 class="mb-4 text-center" data-aos="fade-up">Cat Image Carousel</h2>
+                <div class="cat-container">
+                    <div class="cat-slider-wrapper">
+                        <div class="cat-inner-wrapper">
+                            <div class="cat-slide"><img src="" alt="Cat 1" /></div>
+                            <div class="cat-slide"><img src="" alt="Cat 2" /></div>
+                            <div class="cat-slide"><img src="" alt="Cat 3" /></div>
+                            <div class="cat-slide"><img src="" alt="Cat 4" /></div>
+                            <div class="cat-slide"><img src="" alt="Cat 5" /></div>
+                            <div class="cat-slide"><img src="" alt="Cat 6" /></div>
+                        </div>
+                    </div>
+                    <div class="cat-button cat-prev"></div>
+                    <div class="cat-button cat-next"></div>
+                </div>
+            </div>
+        </section>
+        <!-------------- Cat Image Carousel End ---------------->
+
+
+        <!-------------- Cat Animation Start ---------------->
+        <div class="outer_wrapper">
+            <div class="wrapper">
+
+                <div class="cat_wrapper">
+                    <div class="cat first_pose">
+                        <div class="cat_head">
+                            <svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 76.4 61.2">
+                                <polygon class="eyes"
+                                    points="63.8,54.1 50.7,54.1 50.7,59.6 27.1,59.6 27.1,54.1 12.4,54.1 12.4,31.8 63.8,31.8 " />
+                                <path d="M15.3,45.9h5.1V35.7h-5.1C15.3,35.7,15.3,45.9,15.3,45.9z M45.8,56.1V51H30.6v5.1H45.8z M61.1,35.7H56v10.2h5.1
+                  V35.7z M10.2,61.2v-5.1H5.1V51H0V25.5h5.1V15.3h5.1V5.1h5.1V0h5.1v5.1h5.1v5.1h5.1v5.1c0,0,15.2,0,15.2,0v-5.1h5.1V5.1H56V0h5.1v5.1
+                  h5.1v10.2h5.1v10.2h5.1l0,25.5h-5.1v5.1h-5.1v5.1H10.2z" />
+                            </svg>
+
+                        </div>
+                        <div class="body">
+                            <svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 91.7 40.8">
+                                <path class="st0"
+                                    d="M91.7,40.8H0V10.2h5.1V5.1h5.1V0h66.2v5.1h10.2v5.1h5.1L91.7,40.8z" />
+                            </svg>
+
+                            <div class="tail">
+                                <svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 25.5 61.1">
+                                    <polygon class="st0" points="10.2,56 10.2,50.9 5.1,50.9 5.1,40.7 0,40.7 0,20.4 5.1,20.4 5.1,10.2 10.2,10.2 10.2,5.1 15.3,5.1 
+                          15.3,0 25.5,0 25.5,10.2 20.4,10.2 20.4,15.3 15.3,15.3 15.3,20.4 10.2,20.4 10.2,40.7 15.3,40.7 15.3,45.8 20.4,45.8 20.4,50.9 
+                          25.5,50.9 25.5,61.1 15.3,61.1 15.3,56 " />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="front_legs">
+                            <div class="leg one">
+                                <svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 14 30.5">
+                                    <polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0 " />
+                                </svg>
+                            </div>
+                            <div class="leg two">
+                                <svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 14 30.5">
+                                    <polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0 " />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="back_legs">
+                            <div class="leg three">
+                                <svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 14 30.5">
+                                    <polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0 " />
+                                </svg>
+                            </div>
+                            <div class="leg four">
+                                <svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 14 30.5">
+                                    <polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0 " />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ground"></div>
+
+        </div>
+
+
+
+
+
+        <!-- !-------------- Cat Animation End ---------------->
+        <div class="header">
+            <p> It's about playing with your cat. <br> Or being one. </p>
+        </div>
+
+        <div class="container">
+            <hr class="soften" />
+        </div>
+
+
+
+
+
+    </main>
+
+
+    <!-------------------------------------- Cats Section End -------------------------------------------->
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="text-white">
+                        Woof and Meow
+                    </h5>
+                </div>
+                <div class="col-6">
+                    <p class="copyright-text mb-0">Copyright © Woof and Meow 2024
+                        <br><br>Design: <a href="https://www.linkedin.com/in/ananthudev" target="_parent">Ananthu
+                            Dev</a><br><br>
+                    </p>
+                </div>
+            </div>
+    </footer>
+
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="{% static 'js/jquery.sticky.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/magnific-popup-options.js' %}"></script>
+    <script src="{% static 'js/scrollspy.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Dog image like -->
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- Dog image like -->
+    <!-- Cat image like -->
+    <script src="{% static 'js/catlike.js' %}"></script>
+    <!-- Cat image like -->
+    <!-- Dog image gallery -->
+    <script src="{% static 'js/doggallery.js' %}"></script>
+    <!-- Dog image gallery -->
+
+    <!-- Cat image gallery -->
+    <script src="{% static 'js/catgallery.js' %}" defer></script>
+    <!-- Cat image gallery -->
+
+
+
+    <!-- Dog lookup  -->
+    <script src="{% static 'js/generatedog.js' %}"></script>
+    <!-- Dog lookup  -->
+    <!-- cat lookup  -->
+    <script src="{% static 'js/generatedcat.js' %}"></script>
+    <!-- cat lookup  -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- autocomplete -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- autocomplete -->
+    <!-- Dog Slide.js -->
+    <script src="{% static 'js/dogslide.js' %}"></script>
+    <!-- Dogslide.js -->
+    <!-- Cat Slide -->
+    <script src="{% static 'js/catslide.js' %}"></script>
+    <!-- Cat Animation js -->
+    <script src="{% static 'js/catanim.js' %}"></script>
+    <!-- Cat Animation js -->
+
+
+
+
+</body>
+
+</html>
