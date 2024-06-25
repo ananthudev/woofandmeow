@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="section-padding pb-0" id="about">
+    <div class="container mb-5 pb-lg-5">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="mb-3" data-aos="fade-up">
+                    Dogs
+                    <img src="{% static 'images\Animation - 1717705042517.gif' %}" alt="Dog GIF"
+                        style="width: 140px; height: 140px; margin-left: 10px;">
+                </h2>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-3">
+                <select id="dogBreeds" class="form-select" aria-label="Default select example">
+                    <option selected>Select a Breed</option>
+                </select>
+            </div>
+            <div class="col-lg-5 col-md-6 mb-3">
+                <input type="text" name="query" id="homepage-search-input" class="form-control"
+                    placeholder="Search dogs..."
+                    style="background: hsla(0,0%,100%,.15); border: 2px solid hsla(0,0%,100%,.6); color: #0e0e0e;">
+            </div>
+            <div class="col-lg-3 col-md-12">
+                <button type="submit" id="homepage-search-button" class="btn btn-primary w-100 text-nowrap">
+                    <i class="fa fa-search"></i>
+                    <span class="d-inline d-md-none d-lg-inline">Search</span>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div id="dogBreedDetails" class="mt-3"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding" id="dog-pics">
+    <div class="container">
+        <h2 class="mb-4 text-center" data-aos="fade-up">Generate Random Dog Pics</h2>
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card mb-3">
+                    <img id="dog-image" class="card-img-top" alt="Random Dog">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center">
+                            <button id="like-btn" class="btn btn-primary me-2" onclick="likeDog()">
+                                <i class="bi bi-heart-fill"></i> Like
+                            </button>
+                            <button id="dislike-btn" class="btn btn-secondary" onclick="showNewDog()">
+                                <i class="bi bi-x-circle-fill"></i> Dislike
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="liked-dogs-section" class="row d-none">
+            <div class="container">
+                <h3 class="mb-3 text-center">Liked Dogs</h3>
+                <div id="liked-dogs-grid" class="row img-grid"></div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <div class="container">
+                <button id="show-liked-btn" class="btn btn-outline-primary" onclick="showLikedDogs()">Show
+                    Liked</button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Dog image gallery start -->
+<section class="section-padding" id="dog-image-gallery">
+    <div class="container">
+        <h2 class="mb-4 text-center" data-aos="fade-up">Dog Image Gallery</h2>
+        <div class="row justify-content-center" id="dog-images-container">
+            <!-- Dog images will be dynamically added here -->
+        </div>
+        <div class="text-center mt-3">
+            <button id="load-more-btn" class="btn btn-outline-primary" onclick="loadMoreDogImages()">Load
+                More</button>
+        </div>
+    </div>
+</section>
+<!-- Dog image gallery end   -->
+
+<!-- Dog carousel start -->
+
+<section class="section-padding" id="dog-image-carousel">
+    <div class="container">
+        <div class="dog-container">
+            <h2 class="mb-4 text-center" data-aos="fade-up">Dog Image Carousel</h2>
+            <div class="slider-wrapper">
+                <div class="inner-wrapper">
+                    <div class="slide"><img src="" alt="Dog 1" /></div>
+                    <div class="slide"><img src="" alt="Dog 2" /></div>
+                    <div class="slide"><img src="" alt="Dog 3" /></div>
+                    <div class="slide"><img src="" alt="Dog 4" /></div>
+                    <div class="slide"><img src="" alt="Dog 5" /></div>
+                    <div class="slide"><img src="" alt="Dog 6" /></div>
+                </div>
+            </div>
+            <div class="button prev"></div>
+            <div class="button next"></div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
+
+<!-- Dog carousel end -->
+
+
+<!------------------------------- Dogs Section End ------------------
