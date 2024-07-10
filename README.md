@@ -43,4 +43,4 @@ This is a Django-based web application that provides a simple login system and d
 Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request.
 
 ## License 📝
-This project is licensed under the MIT License. See LICENSE for details.
+[This project is licensed under the MIT License. See LICENSE for details.]([https://github.com/ananthudev/Liveliness-Check-Facial-Recognition-for-Fraud-Prevention](https://github.com/ananthudev/woofandmeow/))
