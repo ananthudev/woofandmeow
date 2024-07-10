@@ -4,6 +4,7 @@
 This is a Django-based web application that provides a simple login system and displays different cat and dog information. It utilizes cat and dog APIs.
 
 ## Features 🎉
+- Switch to HTML and CSS branch for HTML and CSS alone
 
 ### Login System 🔒
 - Custom login form with username and password fields
